@@ -1,0 +1,73 @@
+/* Heritage appearance wins over the newer component library. */
+:root{--accent:var(--teal);--brand:#04B3CF;--ok:var(--green);--bad:var(--red)}
+/* Grid's intrinsic 1600px track can crop the scaled stage on smaller screens. */
+#viewport{display:block}
+#stage{position:absolute;left:50%;top:50%;margin-left:-800px;margin-top:-450px}
+.cd-hud .brand{top:40px;left:96px}
+.cd-hud .where{top:42px;right:96px}
+.cd-hud .acts{left:96px;bottom:38px}
+.cd-hud .acts s{background:rgba(255,255,255,.1)}
+.cd-minimap{right:96px;bottom:34px;width:150px;height:78px}
+.cd-minimap path{stroke:rgba(255,255,255,.18)}
+.cd-minimap rect.f{fill:rgba(255,255,255,.06);stroke:rgba(255,255,255,.18)}
+.cd-minimap rect.f.seen{fill:rgba(56,229,206,.22)}
+.cd-minimap rect.f.cur{fill:var(--teal);stroke:var(--teal)}
+.cd-minimap rect.v{stroke:#fff}
+.cd-actlabel{color:rgba(255,255,255,.14)}
+.cd-actlabel em{color:rgba(255,255,255,.3)}
+.cd-actcard{background:radial-gradient(ellipse 58% 40% at 50% 50%,rgba(2,4,10,.82),rgba(2,4,10,.35) 70%,transparent)}
+.cd-actcard .t{font-size:92px;text-shadow:0 0 50px rgba(56,229,206,.25)}
+.cd-letterbox::before,.cd-letterbox::after{height:0;transform:none;transition:height .55s var(--e-io)}
+#stage.act .cd-letterbox::before,#stage.act .cd-letterbox::after{height:112px}
+.cd-thread path:not(.glow){stroke:rgba(255,255,255,.1);stroke-width:3;stroke-dasharray:2 14;stroke-linejoin:miter;transition:stroke 2s,stroke-width 2s}
+.cd-thread path.glow{opacity:0}
+#stage.lightsout .cd-thread path:not(.glow){stroke:var(--teal);stroke-width:10;stroke-dasharray:none;filter:drop-shadow(0 0 24px rgba(56,229,206,.9))}
+#stage.lightsout .cd-thread path.glow{opacity:0}
+.cd-nav button{min-width:34px;width:34px;height:34px;padding:0;border-radius:50%;font-size:14px}
+.cd-nav{flex-direction:column-reverse;align-items:flex-end;right:clamp(0px,calc(6vw - 38px),18px)}
+.cd-nav:focus-within{opacity:1}
+.cd-nav button:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.notes{display:none}
+/* Keep the speaker console readable while its slide previews follow the deck. */
+html.light body.deck-presenter,body.deck-presenter{background:#05070C;color:#E9EDF3}
+html.embed :is(.cd-nav,.cd-help,.cd-goto,#cd-blank){display:none!important}
+/* Legacy chips carry absolute coordinates relative to .b7, not the field. */
+.b7>.field{position:static;display:block;left:auto;right:auto;top:auto}
+/* Legacy scenes keep their original geometry; modern frames opt in explicitly. */
+.frame.stk>.in{padding-top:108px}
+.frame.f1>.in{padding:0}
+.frame:not(.deck-modern) .h{text-wrap:wrap}
+.frame:not(.deck-modern) .kick+.h{margin-top:0}
+.frame:not(.deck-modern) .console .lg{grid-template-columns:44px 150px 1fr 34px 40px;border-top-color:rgba(255,255,255,.06)}
+.frame:not(.deck-modern) .console .lg .ld{font-size:11.5px}
+.frame:not(.deck-modern) .inst .il{font-size:14.5px}
+#stage.zoom.show-acts-on-zoom .cd-hud .acts{opacity:1}
+html.light .cd-hud .acts s{background:rgba(12,20,36,.12)}
+html.light .cd-minimap path{stroke:rgba(12,20,36,.18)}
+html.light .cd-minimap rect.f{fill:rgba(12,20,36,.06);stroke:rgba(12,20,36,.22)}
+html.light .cd-minimap rect.f.seen{fill:rgba(8,144,127,.25)}
+html.light .cd-minimap rect.f.cur{fill:var(--teal);stroke:var(--teal)}
+html.light .cd-minimap rect.v{stroke:var(--txt)}
+html.light .cd-actlabel{color:rgba(12,20,36,.12)}
+html.light .cd-actlabel em{color:rgba(12,20,36,.28)}
+html.light .frame:not(.deck-modern) .console .lg{border-top-color:rgba(12,20,36,.08)}
+html.light .cd-thread path:not(.glow){stroke:rgba(12,20,36,.16)}
+html.light #stage.lightsout .cd-thread path:not(.glow){stroke:var(--teal);filter:none}
+html.light .cd-actcard{background:radial-gradient(ellipse 58% 40% at 50% 50%,rgba(255,255,255,.92),rgba(255,255,255,.55) 70%,transparent)}
+html.light #stage.lightsout .cd-finale p{color:var(--txt)}
+html:not(.light) .cd-finale p{color:#fff}
+html:not(.light) .cd-finale-shade{background:linear-gradient(transparent,rgba(0,0,0,.85))}
+/* REA widgets use HTML checklists; the legacy archetypes use SVG groups. */
+.deck-modern .ck{display:grid;grid-template-columns:18px 1fr;align-items:center;gap:10px;font-size:14px;font-weight:500;color:var(--txt)}
+.deck-modern .ck::before{content:'✓';color:var(--ok)}
+.deck-modern .ck.on,.on .deck-modern .ck{opacity:1;transform:none}
+/* Print and reduced-motion rules also cover the heritage animation vocabulary. */
+html.static *,html.static *::before,html.static *::after{animation-delay:0ms!important;animation-duration:1ms!important;animation-iteration-count:1!important;transition:none!important}
+html.reduce *,html.reduce *::before,html.reduce *::after{animation-delay:0ms!important;animation-duration:1ms!important;animation-iteration-count:1!important;transition-duration:1ms!important;transition-delay:0ms!important}
+html.static .frame.is-active .sun,html.static .frame.is-active .p-gen,html.static .frame.is-active .p-gov,
+html.reduce .frame.is-active .sun,html.reduce .frame.is-active .p-gen,html.reduce .frame.is-active .p-gov{opacity:1;transform:none;filter:none}
+html.print .ghost,html.print .notes{display:none!important}
+html.print #viewport{display:block;overflow:visible}
+html.print .frame{width:1600px;height:900px;overflow:hidden}
+html.print #stage .frame>.in{opacity:1!important}
+html.print .cd-nav,html.print .cd-help,html.print .cd-goto{display:none!important}

@@ -1,0 +1,93 @@
+/* Palette color treatments. Geometry, fonts, cameras and timing stay shared. */
+:root{--primary:var(--teal);--secondary:var(--blue);--tertiary:var(--violet);--quaternary:var(--ember);--on-accent:var(--panel)}
+
+html[data-palette]:not([data-palette="base"]) body:not(.deck-presenter),
+html[data-palette]:not([data-palette="base"]) #viewport{background:var(--void)}
+html[data-palette]:not([data-palette="base"]) .frame{--lit:var(--primary);--palette-ink-lit:var(--primary-ink,var(--primary))}
+html[data-palette]:not([data-palette="base"]) :is(.qcard p,.gread b,.cd-finale p){color:var(--txt)}
+html[data-palette]:not([data-palette="base"]) :is(.vi1,.core .disc,.pcore){fill:var(--txt)}
+html[data-palette]:not([data-palette="base"]) .vi2{fill:var(--txt2)}
+html[data-palette]:not([data-palette="base"]) .core .halo{stroke:var(--txt)}
+html[data-palette]:not([data-palette="base"]) .vc{fill:var(--panel)}
+html[data-palette]:not([data-palette="base"]) .go{color:var(--on-blue,var(--on-accent))}
+html[data-palette]:not([data-palette="base"]) .rseg i.sel{color:var(--txt)}
+html[data-palette]:not([data-palette="base"]) .field.on i{color:var(--txt)}
+html[data-palette]:not([data-palette="base"]) #stage *{text-shadow:none}
+html[data-palette]:not([data-palette="base"]) :is(.gl,.toolbar,.slab,.slabt,.lbeam,.garc,.flare,.pcore,.sdot,.core .disc,.p-gov){filter:none}
+html[data-palette]:not([data-palette="base"]) #stage [style*="drop-shadow"]{filter:none!important}
+html[data-palette]:not([data-palette="base"]) :is(.beam i,.emit,.waves s){box-shadow:none}
+html[data-palette]:not([data-palette="base"]) .a-blueprint{--amber:var(--quaternary)}
+html[data-palette]:not([data-palette="base"]) :is(.pil,.inst,.cd-gauge,.cd-diagram .nd,.cd-bars){--palette-ink-c:var(--palette-ink-lit,var(--lit))}
+html[data-palette]:not([data-palette="base"]) .cd-diagram .grp{--palette-ink-c:var(--blue-ink,var(--blue))}
+html[data-palette]:not([data-palette="base"]) .cd-diagram .ed{--palette-ink-c:var(--txt3)}
+html[data-palette]:not([data-palette="base"]) .cd-actcard{background:radial-gradient(ellipse 58% 40% at 50% 50%,color-mix(in srgb,var(--panel) 96%,transparent),color-mix(in srgb,var(--void) 75%,transparent) 70%,transparent)}
+html[data-palette]:not([data-palette="base"]) :is(.sun,.vl){mix-blend-mode:normal}
+html[data-palette]:not([data-palette="base"]) :is(.p-sky,.p-reflect) .sun:nth-child(1){--c:var(--brand-blue)!important}
+html[data-palette]:not([data-palette="base"]) :is(.p-sky,.p-reflect) .sun:nth-child(2){--c:var(--brand-indigo)!important}
+html[data-palette]:not([data-palette="base"]) :is(.p-sky,.p-reflect) .sun:nth-child(3){--c:var(--brand-violet)!important}
+html[data-palette]:not([data-palette="base"]) .p-horizon{background:linear-gradient(90deg,transparent,var(--primary) 30%,var(--primary) 70%,transparent);box-shadow:none}
+html[data-palette]:not([data-palette="base"]) .cd-grain{opacity:.012}
+html[data-palette]:not([data-palette="base"]) .cd-vignette{opacity:.15}
+html[data-palette]:not([data-palette="base"]) #stage.lightsout .frame{background:var(--panel);border-color:color-mix(in srgb,var(--primary) 40%,transparent);box-shadow:0 0 80px color-mix(in srgb,var(--primary) 6%,transparent)}
+html[data-palette]:not([data-palette="base"]) #stage.lightsout .cd-thread path:not(.glow){stroke:var(--primary);filter:none}
+html[data-palette]:not([data-palette="base"]) .cd-finale-shade{background:linear-gradient(transparent,color-mix(in srgb,var(--void) 96%,transparent))}
+html[data-palette]:not([data-palette="base"]) .cd-finale p b{color:var(--primary-ink,var(--primary))}
+html[data-palette]:not([data-palette="base"]) .cd-minimap rect.v{stroke:var(--txt)}
+html[data-palette]:not([data-palette="base"]) .cd-nav button{color:var(--txt);background:var(--panel);border-color:var(--line2)}
+
+/* Official: the source's blue → indigo → violet progression, used sparingly. */
+html[data-palette-treatment="gradient"] .p-horizon{background:linear-gradient(90deg,transparent,var(--brand-blue) 25%,var(--brand-indigo) 65%,var(--brand-violet) 85%,transparent)}
+html[data-palette-treatment="gradient"] .cd-actcard .t{background:var(--brand-gradient);background-clip:text;-webkit-background-clip:text;color:transparent}
+html[data-palette-treatment="gradient"] .cd-finale p b{background:var(--brand-gradient);background-clip:text;-webkit-background-clip:text;color:transparent}
+
+/* AI: flat role colors for technical content. No rainbow treatment on text. */
+html[data-palette-treatment="solid"] .sun{background:radial-gradient(circle at 50% 50%,color-mix(in srgb,var(--c) 9%,transparent) 0 58%,transparent 70%);box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 28%,transparent)}
+html[data-palette-treatment="solid"] .cd-grain{opacity:0}
+html[data-palette-treatment="solid"] .cd-hud .acts s i{background:var(--primary)}
+
+/* Theme artwork fills the shared title slot. Content artwork can opt out. */
+[data-design-title-mark][hidden]{display:none}
+[data-design-title-mark] > .p-logo-l{--m:var(--design-title-letters);background:var(--txt)}
+[data-design-title-mark] > .p-logo-b{--m:var(--design-title-brackets,linear-gradient(transparent,transparent));background:#04B3CF}
+html[data-palette="ah-one-ai"] [data-design-title-mark] > .p-logo-l{background:var(--brand-ink)}
+
+.cd-hud .brand b[data-design-hud]::before{
+  content:"";display:inline-block;width:var(--design-hud-width,0);height:24px;vertical-align:middle;
+  margin-right:var(--design-hud-gap,0);background:var(--txt);mask:var(--design-hud-mark,none) center/contain no-repeat;
+}
+html[data-palette="ah-one-ai"] [data-one-ai-title-mark]::before{
+  content:"";position:absolute;inset:0;background:var(--brand-ink);mask:var(--design-title-letters,none) center/contain no-repeat;
+}
+html.light[data-palette]:not([data-palette="base"]) .qcard{background:color-mix(in srgb,var(--panel) 60%,transparent)}
+
+/* Keep the heritage title sweep visible with the new graphic colors.
+   The engine owns its original animation, delay and duration. */
+html[data-palette]:not([data-palette="base"]) .p-gov{
+  background-image:linear-gradient(100deg,var(--txt) 0 40%,var(--txt) 48%,var(--primary) 52%,var(--txt) 60% 100%);
+  background-size:300% 100%;background-position:100% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* GitHub story cover: navy with a cool light field in both appearances. */
+html[data-palette="epam-github"] :is(.a-title,.frame:has(.p-title>.p-gov)){
+  --txt:#FFFFFF;--txt2:#C2CCE0;--txt3:#A4B2CD;--line2:#FFFFFF2E;
+  --palette-ink-txt:var(--txt);--palette-ink-txt2:var(--txt2);--palette-ink-txt3:var(--txt3);
+  background:
+    radial-gradient(circle at 78% 62%,rgba(77,113,255,.62),transparent 20%),
+    radial-gradient(circle at 68% 70%,rgba(25,206,193,.48),transparent 16%),
+    radial-gradient(circle at 88% 48%,rgba(146,76,235,.34),transparent 20%),
+    linear-gradient(136deg,#050B1B 0%,#071630 54%,#09112B 100%);
+}
+html[data-palette="epam-github"] [data-design-title-mark] > .p-logo-b{background:var(--txt)}
+html[data-palette="epam-github"] .p-kick{color:#79A4FF}
+html[data-palette="epam-github"] .p-gov{
+  background-image:linear-gradient(100deg,var(--txt) 0 48%,#79A4FF 52%,var(--txt) 60% 100%);
+}
+html[data-palette="epam-github"] .p-sky{opacity:.35}
+html[data-palette="epam-github"] .p-reflect{opacity:.1}
+html[data-palette="epam-github"] .p-horizon{
+  background:linear-gradient(90deg,transparent,var(--brand-blue) 25%,var(--brand-teal) 55%,var(--brand-violet) 80%,transparent);
+}
+
+/* Seven controls still fit short browser windows. */
+@media(max-height:340px){.cd-nav{gap:3px;bottom:8px}.cd-nav button{width:28px;min-width:28px;height:28px;font-size:12px}}

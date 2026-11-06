@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deck Design Comparison</title>
+<style>
+:root{color-scheme:light;--paper:#f4f5f7;--white:#fff;--ink:#192238;--muted:#4c5c72;--line:#d3dae5;--accent:#294fd0}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:var(--paper);font:15px/1.5 system-ui,sans-serif}
+[hidden]{display:none!important}
+main{width:min(100%,1800px);padding:32px clamp(16px,3vw,52px) 24px;margin:auto}
+h1,h2,p{margin:0}
+h1{font-size:clamp(28px,4vw,46px);line-height:1.12;letter-spacing:-.045em;overflow-wrap:anywhere}
+h2{font-size:16px}
+.hero{display:flex;flex-wrap:wrap;align-items:start;justify-content:space-between;gap:18px;margin-bottom:24px}
+.loaded-deck{margin-top:12px;overflow-wrap:anywhere}
+.loaded-label{margin-inline-end:8px;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.summary{margin-top:8px;color:var(--muted)}
+button,select{min-height:38px;font:inherit;font-size:14px;color:inherit;background:var(--white);border:1px solid #b6c0d0;border-radius:7px;padding:7px 10px}
+button{font-weight:600;cursor:pointer}
+button:disabled,select:disabled{cursor:default;opacity:.5}
+button.primary{background:var(--accent);color:white;border-color:var(--accent);padding-inline:16px}
+button:not(:disabled):hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.controls{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+.row,.pane header,.pane-options,.navigation{display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.row+.row{border-top:1px solid var(--line);padding-top:12px;margin-top:12px}
+.row label,.pane label{display:flex;align-items:center;gap:7px;color:var(--muted);font-size:13px;font-weight:600}
+.row select,.pane select{min-width:0;max-width:100%;color:var(--ink);font-weight:500}
+#frame{max-width:min(36vw,460px)}
+#position{margin-left:auto;color:var(--muted);font-size:13px;font-variant-numeric:tabular-nums}
+.views{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:18px 0 0}
+.views.detail{grid-template-columns:minmax(0,1fr);max-width:1100px;margin-inline:auto}
+.pane{min-width:0;border:1px solid var(--line);border-radius:12px;background:var(--white);overflow:hidden}
+.pane header{justify-content:space-between;padding:9px 11px;min-height:59px}
+.pane header h2{overflow-wrap:anywhere}
+.pane label{min-width:0}
+.appearance{color:var(--muted);font-size:12px}
+.pane button{min-height:34px;font-size:13px}
+iframe{display:block;width:100%;aspect-ratio:16/9;border:0;background:#090d14}
+.notice,.keys{font-size:13px;color:var(--muted);margin-top:14px}
+.notice[role="alert"]{color:#a12320}
+.empty{background:var(--white);border:1px dashed #aebad0;border-radius:12px;padding:32px;max-width:660px}
+.empty p{margin-top:8px;color:var(--muted)}
+kbd{font:inherit;font-weight:650;color:var(--ink)}
+@media(max-width:800px){.views{grid-template-columns:minmax(0,1fr)}#frame{max-width:min(57vw,460px)}#position{margin-left:0}}
+</style>
+</head>
+<body>
+<main>
+<header class="hero">
+  <div>
+    <h1>Deck Design Comparison</h1>
+    <p id="loaded-deck" class="loaded-deck" hidden><span class="loaded-label">Current deck</span> <strong id="story-title"></strong></p>
+    <p id="summary" class="summary">One story, synchronized across designs.</p>
+  </div>
+  <button id="open" type="button" class="primary">Open deck</button>
+  <input id="file" type="file" accept=".html,.htm,text/html" hidden>
+</header>
+<div id="notice" class="notice" role="status" hidden></div>
+<section id="empty" class="empty">
+  <h2>Start with a deck</h2>
+  <p>Open a standalone HTML deck built with the deck skill. This viewer reads its available designs from the file and runs locally in your browser.</p>
+</section>
+<section id="workspace" aria-label="Design workspace" hidden>
+  <div class="controls">
+    <div class="row" aria-label="Story navigation">
+      <div class="navigation">
+        <button id="prev" type="button" aria-label="Previous build">← Previous</button>
+        <button id="next" type="button" aria-label="Next build">Next →</button>
+        <button id="replay" type="button">Replay frame</button>
+      </div>
+      <label>Frame <select id="frame"></select></label>
+      <label>Build <select id="step"></select></label>
+      <span id="position" role="status"></span>
+    </div>
+    <div class="row" aria-label="Comparison settings">
+      <label>Appearance <select id="theme">
+        <option value="default">Design defaults</option>
+        <option value="dark">Dark for all</option>
+        <option value="light">Light for all</option>
+      </select></label>
+      <label>Motion <select id="motion">
+        <option value="live">Live animations</option>
+        <option value="static">Static preview</option>
+      </select></label>
+      <label>View <select id="layout">
+        <option value="pair">Side by side</option>
+        <option value="all">All selected designs</option>
+        <option value="left">Left detail</option>
+        <option value="right">Right detail</option>
+      </select></label>
+    </div>
+  </div>
+  <div id="views" class="views" aria-label="Deck previews"></div>
+  <p class="keys">Use <kbd>←</kbd> <kbd>→</kbd> or click a preview to move all views. Press <kbd>T</kbd> for a shared light or dark appearance and <kbd>C</kbd> in a side-by-side preview to cycle its design. Use the same appearance to compare colors, or use design defaults to compare the intended looks.</p>
+</section>
+</main>
+<template id="pane">
+  <article class="pane">
+    <header>
+      <div class="pane-options">
+        <label><span></span><select></select></label>
+        <h2 hidden></h2>
+        <span class="appearance"></span>
+      </div>
+      <button type="button">Download HTML</button>
+    </header>
+    <iframe sandbox="allow-scripts" title="Deck preview"></iframe>
+  </article>
+</template>
+<!-- comparison-data -->
+<!-- comparison-script -->
+</body>
+</html>

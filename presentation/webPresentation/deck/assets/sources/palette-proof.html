@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Palette reference</title>
+<style>
+.palette-proof .proof-label{font:12px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--txt2);margin:32px 0 16px}
+.palette-proof .proof-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px}
+.palette-proof .proof-swatch{height:130px;background:var(--c)}
+.palette-proof .proof-name{margin-top:14px;font-size:20px;font-weight:600;color:var(--txt)}
+.palette-proof .proof-text{font-size:22px;font-weight:600;color:var(--c)}
+.palette-proof .proof-caption{font:12px var(--mono);color:var(--txt2);margin-top:10px;line-height:1.6}
+</style></head><body><div id="stage"><div id="world">
+<section class="frame deck-modern palette-proof" data-act="0" data-steps="0" data-title="Palette reference" style="--lit:var(--primary)">
+<div class="in">
+<p class="kick">Color system</p><h1 class="h">Source colors. <span class="lit">Separate text contrast.</span></h1>
+<p class="lede">Opaque graphic accents keep the palette values in both light and dark.</p>
+<p class="proof-label">Graphic colors</p>
+<div class="proof-grid">
+<div><div class="proof-swatch" style="--c:var(--blue)"></div><p class="proof-name">Blue</p></div>
+<div><div class="proof-swatch" style="--c:var(--teal)"></div><p class="proof-name">Teal</p></div>
+<div><div class="proof-swatch" style="--c:var(--violet)"></div><p class="proof-name">Violet</p></div>
+<div><div class="proof-swatch" style="--c:var(--indigo)"></div><p class="proof-name">Indigo</p></div>
+<div><div class="proof-swatch" style="--c:var(--cyan)"></div><p class="proof-name">Cyan</p></div>
+</div>
+<p class="proof-label" style="margin-top:44px">Text counterparts</p>
+<div class="proof-grid">
+<div><p class="proof-text" style="--c:var(--blue-ink,var(--blue))">Readable text</p><p class="proof-caption">Text-only contrast variant</p></div>
+<div><p class="proof-text" style="--c:var(--teal-ink,var(--teal))">Readable text</p><p class="proof-caption">Text-only contrast variant</p></div>
+<div><p class="proof-text" style="--c:var(--violet-ink,var(--violet))">Readable text</p><p class="proof-caption">Text-only contrast variant</p></div>
+<div><p class="proof-text" style="--c:var(--indigo-ink,var(--indigo))">Readable text</p><p class="proof-caption">Text-only contrast variant</p></div>
+<div><p class="proof-text" style="--c:var(--cyan-ink,var(--cyan))">Readable text</p><p class="proof-caption">Text-only contrast variant</p></div>
+</div>
+</div></section></div></div>
+<script type="application/json" id="deck-config">{"id":"palette-reference","title":"Palette reference","palette":"base","acts":[{"k":"Reference","t":"Color system"}],"brand":{"name":"EPAM","label":"Color palette"},"finale":{"text":""}}</script>
+</body></html>

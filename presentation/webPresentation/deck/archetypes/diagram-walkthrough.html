@@ -1,0 +1,21 @@
+<!-- Give node IDs a unique prefix when using this frame more than once. -->
+<section class="frame deck-modern a-diagram-walkthrough" data-act="0" data-title="Diagram walkthrough" data-steps="3" style="--lit:var(--blue)">
+  <div class="in">
+    <p class="kick">Architecture · illustrative flow</p>
+    <h2 class="h s">One decision routes the request <span class="lit">through the right path.</span></h2>
+    <p class="lede">The whole system stays visible as each route comes into focus.</p>
+    <svg class="cd-diagram focus-hl" viewBox="0 0 1400 400" style="width:100%;height:400px;margin:auto 0"
+      role="img" aria-label="Intake calls the gateway, then a policy check routes the request to release or human review.">
+      <g class="nd" id="walk-intake" data-x="30" data-y="145" data-w="220" data-h="108" data-title="Intake" data-sub="capture request" data-icon="user" data-hl="1" style="--c:var(--blue)"></g>
+      <g class="nd" id="walk-gateway" data-x="355" data-y="145" data-w="220" data-h="108" data-title="Gateway" data-sub="verify identity" data-icon="gateway" data-hl="1,2" style="--c:var(--blue)"></g>
+      <g class="nd" id="walk-policy" data-x="680" data-y="145" data-w="220" data-h="108" data-title="Policy check" data-sub="evaluate evidence" data-icon="shield" data-hl="2-3" style="--c:var(--violet)"></g>
+      <g class="nd" id="walk-release" data-x="1110" data-y="50" data-w="245" data-h="108" data-title="Release" data-sub="record decision" data-icon="check" data-hl="3" style="--c:var(--green)"></g>
+      <g class="nd" id="walk-review" data-x="1110" data-y="241" data-w="245" data-h="108" data-title="Human review" data-sub="resolve exception" data-icon="eye" data-hl="3" style="--c:var(--amber)"></g>
+      <g class="ed" data-from="walk-intake" data-to="walk-gateway" data-hl="1" style="--c:var(--blue)"></g>
+      <g class="ed" data-from="walk-gateway" data-to="walk-policy" data-hl="2" style="--c:var(--violet)"></g>
+      <g class="ed" data-from="walk-policy" data-to="walk-release" data-label="Pass" data-label-at=".76" data-hl="3" style="--c:var(--green)"></g>
+      <g class="ed" data-from="walk-policy" data-to="walk-review" data-label="Review" data-label-at=".76" data-hl="3" style="--c:var(--amber)"></g>
+    </svg>
+  </div>
+  <aside class="notes"><p>Orient the audience to the full system.</p><p>Follow the request into the gateway.</p><p>Explain the policy decision.</p><p>Show the two possible outcomes.</p></aside>
+</section>

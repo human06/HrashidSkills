@@ -1,0 +1,15 @@
+{
+  "id": "genai-governance-example",
+  "title": "GenAI Governance",
+  "transition": "glide",
+  "finale": {
+    "text": "The gate does not care who wrote it. Human or model — <b>same checks, same pass mark, same audit trail.</b>",
+    "credits": "<b>Hassan Rashid</b> · Senior Solution Architect, EPAM"
+  },
+  "talk": {
+    "prep": [
+      "Conceptual architecture and illustrative runs from the supplied Governance example."
+    ]
+  },
+  "palette": "base"
+}

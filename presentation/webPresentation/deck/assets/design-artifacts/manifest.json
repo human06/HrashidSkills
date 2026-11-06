@@ -1,0 +1,41 @@
+{
+  "epam-github": {
+    "titleMark": "EPAM",
+    "fontStack": [
+      "Inter",
+      "Segoe UI",
+      "Calibri"
+    ],
+    "files": {
+      "title-letters": "epam/logos/legacy-letters.png",
+      "title-brackets": "epam/logos/legacy-brackets.png"
+    }
+  },
+  "epam-official": {
+    "titleMark": "EPAM",
+    "fontStack": [
+      "Calibri"
+    ],
+    "files": {
+      "title-letters": "epam/logos/legacy-letters.png",
+      "title-brackets": "epam/logos/legacy-brackets.png"
+    }
+  },
+  "epam-ai": {
+    "titleMark": "EPAM",
+    "fontStack": [
+      "Calibri",
+      "Calibri Light"
+    ],
+    "files": {
+      "title-letters": "epam/logos/legacy-letters.png",
+      "title-brackets": "epam/logos/legacy-brackets.png"
+    }
+  },
+  "ah-one-ai": {
+    "fontStack": [
+      "EuclidFlex"
+    ],
+    "files": {}
+  }
+}

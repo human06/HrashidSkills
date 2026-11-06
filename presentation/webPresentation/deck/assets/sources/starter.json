@@ -1,0 +1,10 @@
+{
+  "id": "deck-starter",
+  "title": "Deck title",
+  "transition": "glide",
+  "finale": {
+    "text": "The closing line. Second sentence — <b>the lit callback.</b>",
+    "credits": "Presenter Name · Role, EPAM"
+  },
+  "palette": "base"
+}
