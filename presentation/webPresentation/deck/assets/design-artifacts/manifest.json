@@ -32,6 +32,13 @@
       "title-brackets": "epam/logos/legacy-brackets.png"
     }
   },
+  "ah": {
+    "fontStack": [
+      "Albert Heijn Sans",
+      "Archivo"
+    ],
+    "files": {}
+  },
   "ah-one-ai": {
     "fontStack": [
       "EuclidFlex"
