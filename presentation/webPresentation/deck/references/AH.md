@@ -1,17 +1,28 @@
 # Albert Heijn
 
-Use this reference for `ah`.
+Use this reference for `ah`. Source: the AH brand coach (Brand Portal), which says it does not provide a full software token specification. The Digital Design System (Confluence) owns tokens, components and UX copy; contact Joost Krijnen (joost.krijnen@ah.nl). Logo files and minimum size: vi.brandcoach@ah.nl.
 
-**Unverified.** The brand coach service (`oneai-brand-coach-service`) exposes only an authenticated chat endpoint (`/v1/chat/completions` returns 401 without a token), so the values below are approximations of the public Albert Heijn look, not taken from the brand book. Confirm them with the brand coach or brandbook and update `assets/palettes.json`.
+## Verified
 
-| Role | Hex | Deck use |
-|---|---|---|
-| AH blue | `#00A0E2` | Primary accent, graphics |
-| Deep blue | `#0074A8` | Accent text (`*-ink`) on light surfaces |
-| Orange | `#FF6600` | Secondary accent, Bonus-style highlights |
-| Navy | `#0B2A4A` | Light-mode ink, dark-mode canvas base |
-| Sky | `#7FD0F2` | Tertiary graphics |
+| Item | Value |
+|---|---|
+| AH blue ("levendig blauw") | `#00ADE6` (RGB 0, 173, 230), primary brand colour |
+| White | `#FFFFFF`, content panels and the base for outlined CTA buttons |
+| Font | Hamburg, with Arial as the fallback |
+| Contrast | WCAG AA: 3:1 for headings, 4.5:1 for other text |
+| CTA buttons | Never white text on blue or orange. Use a white button, coloured border and black text |
+| Text size | At least 12-14 pt |
 
-Light mode is the default, on white. Dark mode uses navy surfaces. Use `*-ink` tokens for text contrast. Red and amber are for status only, with a label or symbol.
+Hamburg Serial weights and Hamburg Bonus Bold are campaign-specific (Prijsfavorieten), not a UI type ramp. The bundled font stack is `Hamburg`, `Arial`; no font files are included.
 
-The font stack is `Albert Heijn Sans` when installed, falling back to the embedded Archivo. No logo is bundled; register authorized assets in the [asset manifest](../assets/design-artifacts/manifest.json).
+## Derived or placeholder (not brand-verified)
+
+- Text is black and neutral greys; corporate blue (used for panel text in the Mijn Albert Heijn campaign) has no verified hex.
+- `#006B8F` and `#66CDF0` are darker and lighter shades of AH blue, added so blue text passes 4.5:1 on white and for secondary graphics. Black is used on `#00ADE6` (8.1:1) instead of white.
+- Neutral surfaces, borders and the dark appearance are generic defaults.
+- Success, warning and error colours are generic defaults.
+- Bonus orange has no verified value and is not used.
+
+## Unspecified
+
+Tone of voice, button, card and input specs, radius, spacing, shadows, icons, minimum logo size and logo files. The palette bundles no logo. Register authorized assets in the [asset manifest](../assets/design-artifacts/manifest.json).

@@ -15,7 +15,7 @@ Changing an existing deck (it has `<div id="world">`)? Follow [EDIT.md](EDIT.md)
 - **EPAM Official** (`epam-official`): the EPAM mark, Presales palette and structural gradients.
 - **EPAM AI** (`epam-ai`): the EPAM mark, AI-deck color roles and restrained ambient effects.
 - **EPAM GitHub** (`epam-github`): the GitHub story’s navy cover, light content and monochrome EPAM mark.
-- **Albert Heijn** (`ah`): AH blue and orange on white with navy ink; unverified approximation, see `references/AH.md`.
+- **Albert Heijn** (`ah`): AH blue (#00ADE6) on white with black ink and a Hamburg/Arial font stack; see `references/AH.md` for what is verified.
 - **Ahold Delhaize ONE AI** (`ah-one-ai`): the Corporate palette and a EuclidFlex font stack.
 
 Use the design the user names. If they ask to choose, present the bundled options. For a new deck without a design preference, use `base`; for an edit, retain its existing design unless a change is requested. A talk about AI does not by itself select EPAM AI. Light/dark is a separate choice. Read [THEME.md](THEME.md) for the color rules.

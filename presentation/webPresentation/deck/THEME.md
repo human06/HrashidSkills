@@ -9,13 +9,13 @@ The original color scheme remains the default `base` palette. Choose corporate c
 | `epam-ai` | Flat technical role colors, cool neutrals, restrained ambient effects | Light |
 | `epam-github` | Navy cover with blue, teal and violet light, white content surfaces by default, monochrome EPAM mark | Light |
 | `ah-one-ai` | Ahold Delhaize Corporate colors, ONE AI mark and restrained ambient effects | Light |
-| `ah` | Albert Heijn blue and orange on white, navy ink, flat role colors | Light |
+| `ah` | Albert Heijn blue (#00ADE6) on white, black ink, flat role colors | Light |
 
 For an EPAM palette, read [references/EPAM.md](references/EPAM.md) for source colors, gradient rules and derived contrast shades. These are adaptations of the supplied files, not a certification against an EPAM brand manual. Keep the shared archetypes, camera paths and timing. Design fonts can change text wrapping.
 
 For `ah-one-ai`, read [references/AH-ONE-AI.md](references/AH-ONE-AI.md) for the Corporate colors, mark and typography choices.
 
-For `ah`, read [references/AH.md](references/AH.md). Its colors are unverified approximations of the public Albert Heijn look.
+For `ah`, read [references/AH.md](references/AH.md). Only AH blue, white, the Hamburg/Arial fonts and the contrast rules come from the brand coach; other values are marked as derived placeholders.
 
 ## Select and switch
 
