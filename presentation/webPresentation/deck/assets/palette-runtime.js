@@ -91,7 +91,7 @@ function createDeckPalettes(D,H,CFG,Q,ID,sync){
     const dark=(palettes[active].modes||{}).dark;
     ['accent','ember','green','amber'].forEach(role=>{
       const token=role==='accent'?'primary':role;
-      if(dark)D.body.style.setProperty('--pv-'+role,(active==='ah-one-ai'&&dark[token+'-ink'])||dark[token]);
+      if(dark)D.body.style.setProperty('--pv-'+role,((active==='ah-one-ai'||active==='ah')&&dark[token+'-ink'])||dark[token]);
       else D.body.style.removeProperty('--pv-'+role);
     });
   }

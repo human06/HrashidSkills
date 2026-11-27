@@ -32,6 +32,52 @@
       "title-brackets": "epam/logos/legacy-brackets.png"
     }
   },
+  "ah": {
+    "titleMark": "Albert Heijn",
+    "fontStack": [
+      "Hamburg Serial",
+      "Hamburg",
+      "Arial"
+    ],
+    "fonts": [
+      {
+        "family": "Hamburg Serial",
+        "file": "ah/fonts/HamburgSerial-Regular.otf",
+        "weight": 400,
+        "style": "normal"
+      },
+      {
+        "family": "Hamburg Serial",
+        "file": "ah/fonts/HamburgSerial-Bold.otf",
+        "weight": 700,
+        "style": "normal"
+      },
+      {
+        "family": "Hamburg Serial",
+        "file": "ah/fonts/HamburgSerial-Heavy.otf",
+        "weight": 900,
+        "style": "normal"
+      },
+      {
+        "family": "Hamburg Serial",
+        "file": "ah/fonts/HamburgSerial-BoldItalic.otf",
+        "weight": 700,
+        "style": "italic"
+      },
+      {
+        "family": "Balig Script",
+        "file": "ah/fonts/BaligScript-Regular.otf",
+        "weight": 400,
+        "style": "normal"
+      }
+    ],
+    "files": {
+      "title-letters": "ah/logos/logo-mask.png",
+      "logo": "ah/logos/logo-blue.png",
+      "cover-light": "ah/images/levendblauw.jpg",
+      "payoff": "ah/logos/payoff-white.png"
+    }
+  },
   "ah-one-ai": {
     "fontStack": [
       "EuclidFlex"
