@@ -50,6 +50,10 @@ html[data-palette-treatment="solid"] .cd-hud .acts s i{background:var(--primary)
 [data-design-title-mark] > .p-logo-l{--m:var(--design-title-letters);background:var(--txt)}
 [data-design-title-mark] > .p-logo-b{--m:var(--design-title-brackets,linear-gradient(transparent,transparent));background:#04B3CF}
 html[data-palette="ah-one-ai"] [data-design-title-mark] > .p-logo-l{background:var(--brand-ink)}
+/* AH basis logo: blue with the mandatory white outline (brandbook p.13) */
+html[data-palette="ah"] [data-design-title-mark] > .p-logo-l{
+  -webkit-mask:none;mask:none;background:var(--design-logo) center/contain no-repeat;
+  filter:drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff)}
 
 .cd-hud .brand b[data-design-hud]::before{
   content:"";display:inline-block;width:var(--design-hud-width,0);height:24px;vertical-align:middle;

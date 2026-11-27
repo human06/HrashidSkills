@@ -15,7 +15,7 @@ For an EPAM palette, read [references/EPAM.md](references/EPAM.md) for source co
 
 For `ah-one-ai`, read [references/AH-ONE-AI.md](references/AH-ONE-AI.md) for the Corporate colors, mark and typography choices.
 
-For `ah`, read [references/AH.md](references/AH.md). Only AH blue, white, the Hamburg/Arial fonts and the contrast rules come from the brand coach; other values are marked as derived placeholders.
+For `ah`, read [references/AH.md](references/AH.md). AH blue, zeegroen, BONUS orange, the Hamburg Serial fonts, heading and voice rules come from the AH Brandbook (2023); neutrals, ink shades and status colors are marked as derived placeholders.
 
 ## Select and switch
 
